@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+
+    
+    <title>JS Day 1 Question</title>
+    <style>
+        pre{
+            background-color: white;
+            padding: 15px;
+            border: 3px solid grey;
+            border-radius: 10px;
+        }
+        pre:hover{
+            background-color: rgb(200, 200, 181);
+            box-shadow: 5px 5px 2px green;
+            transform: scale(0.85);
+        }
+        body{
+            background-color: black;
+        }
+        p{
+            color: yellow;
+        }
+        h1{
+            text-align: center;
+            color: aqua;
+            font-weight: bold;
+            font-size: 5em;
+            margin: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="page-header">JS Handson 9 (Maps & Sets)</h1>
+    <hr>
+<div class="container-fluid">
+    <b><p>
+        "Problem:
+
+        You are given a string (STR) of length N, consisting of only the lower case English alphabet.
+
+        Your task is to remove all the duplicate occurrences of characters in the string.
+
+
+        Input:abcadeecfb
+        Output:abcdef"
+    </p></b>
+    <pre>
+        str = "abcadeecfb"
+        let s= new Set()
+        for(let a=0; a < str.length; a++){
+            s.add(str[a])
+        }
+        let res =""
+        for(let ch of s){
+            res += ch
+        }
+        console.log(res);
+    </pre>
+    <hr>
+
+    <b><p>
+        "Problem:
+You are given a string (STR) of length N, you have to print the count of all alphabet.(using maps)
+
+Input:
+abcadeecfb
+
+Output:
+a=2
+b=2
+c=2
+d=1
+e=2
+f=1"
+    </p></b>
+    <pre>
+        s="abcadeecfb"
+        let map = new Map()
+        for(let i=0;i < s.length;i++){
+        if(map.has(s[i])){
+        let value = map.get(s[i])
+        map.set(s[i], value+1)
+        }
+        else{
+            map.set(s[i], 1)
+        }
+        }
+        for(let [k,v] of map){
+            console.log(k+"="+v);
+        
+        }
+    </pre>
+    
+</div>
+    <script src="./main.js"></script>
+</body>
+</html>
